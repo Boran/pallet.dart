@@ -1,0 +1,5 @@
+name: pallet.dart
+description: Pallet tool
+dependencies:
+  browser: any
+  angular: any

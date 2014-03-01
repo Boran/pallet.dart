@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>AngularDart1</title>
+    <link rel="stylesheet" href="dart1.css">
+  </head>
+  
+  <body>
+    <div pallet>
+    <h1>Pallet spec</h1>
+    
+    <label for="layout">Layout</label> 
+    <select ng-model="ctrl.layout">
+      <option ng-repeat="layout in ctrl.layouts" ng-vlaue="layout">{{layout}}
+    </select>
+    <br/><label for="rollwidth_mm">Roll width mm</label> <input type="text" ng-model="ctrl.rollwidth_mm" maxlength="6">
+    
+    <br/><label for="diam_mm">Roll diameter mm</label>  <input type="text" ng-model="ctrl.diam_mm" maxlength="6">    
+    <br/><label for="rows">Pallet vertical rows</label> <input type="text" ng-model="ctrl.rows" maxlength="6">
+    <br/><label for="plength_mm">Pallet length</label>  <input type="text" ng-model="ctrl.plength_mm" maxlength="6">
+    <br/><label for="pwidth_mm">Pallet width</label> <input type="text" ng-model="ctrl.pwidth_mm" maxlength="6">
+    <br/><label for="maxLoadingHeight">Pallet max height(mm)</label> <input type="text" ng-model="ctrl.maxLoadingHeight" maxlength="6">
+    <br/><label for="maxLoadingWeight">Pallet max weight(kgs)</label> <input type="text" ng-model="ctrl.maxLoadingWeight" maxlength="6">                
+    <br/><label for="rollkgs">Roll weight (kgs)</label> <input type="text" ng-model="ctrl.rollkgs" maxlength="6">
+    <br/><label for="threed">3D layout?</label> 
+    <select ng-model="ctrl.threed">
+      <option ng-repeat="threed in ctrl.threeds" ng-vlaue="threed">{{threed}}
+    </select>
+        
+    <div>Selected: {{ctrl.layout}} - {{ctrl.rollwidth_mm}} - {{ctrl.diam_mm}}</div>
+    <br/>
+    <div>
+        <input type="button" value="Calculate" ng-click="ctrl.calculate()">
+    </div>
+    </div>
+     
+
+    <script src="packages/shadow_dom/shadow_dom.min.js"></script>
+    <script type="application/dart" src="dart1.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
+</html>

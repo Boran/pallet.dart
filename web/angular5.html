@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html >
+  <head>
+    <title>angular5</title>
+  </head>
+ 
+  <body>   
+    <div angular5>
+      <h2>Angular5 dart: 2 views with menu</h2>
+       <nav>
+        <a href="/view1">View1</a>
+        <a href="/view2">View2</a>
+        </nav>
+      <hr>
+      <section id="details">
+          <!-- the views will be inserted here -->
+          <ng-view></ng-view>
+      </section>
+      <hr>      
+    </div>     
+  </body>
+  <script type="application/dart" src="angular5.dart"></script>
+  <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
+  <script src="packages/browser/dart.js"></script>  
+</html>

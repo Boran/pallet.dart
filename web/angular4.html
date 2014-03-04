@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>angular4</title>
+  </head>
+ 
+  <body>   
+    <div angular4>
+      <h2>Angular4 dart: list filtering</h2>
+      <br/>Name 
+      <input type="text" ng-model="input.name" size=20 
+        placeholder="Enter a name to filter"> {{input.name}}
+      
+      <h3>Looping with ng-repeat</h3>
+      Person: 
+      <!--- Dropdown list:
+      <select ng-model="ctrl.person">
+        <option ng-repeat="person in ctrl.persons" ng-value="person">
+        [{{$index + 1}}] {{person.name| uppercase }} - {{ person.city }}
+      </select> 
+      -->
+
+    <ul>
+      <li class="pointer"
+        ng-repeat="person in ctrl.persons |filter:{name:input.name} |orderBy:city"
+        ng-click="ctrl.selectPerson(person)">
+        [{{$index + 1}}] {{person.name| uppercase }} - {{ person.city }}
+      </li>
+    </ul>
+              
+      <script type="application/dart" src="angular4.dart"></script>
+      <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
+      <script src="packages/browser/dart.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+
+    <h3>Angular5 View 1</h3>
+
+      <br/>Name 
+      <input type="text" ng-model="input.name" size=20 
+        placeholder="Enter a name to filter"> {{input.name}}
+      
+      <h3>Looping with ng-repeat</h3>
+      Person: 
+      <ul>
+        <li class="pointer"
+          ng-repeat="person in ctrl.persons |filter:{name:input.name} |orderBy:city"
+          ng-click="ctrl.selectPerson(person)">
+          [{{$index + 1}}] {{person.name| uppercase }} - {{ person.city }}
+        </li>
+      </ul>
+
